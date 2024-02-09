@@ -1,20 +1,3 @@
-// {
-//   "compilerOptions": {
-//     "target": "es2016",
-//     "lib": ["es2019"],
-//     "module": "commonjs",
-//     "rootDir": "./src",
-//     "outDir": "./dist",
-//     "esModuleInterop": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "strict": true,
-//     "strictPropertyInitialization": false,
-//     "noImplicitAny": true,
-//     "skipLibCheck": true
-//   },
-//   "exclude": ["**/*.spec.ts", "scripts/*.ts"]
-// }
-
 {
   "compilerOptions": {
     "module": "commonjs",
@@ -37,12 +20,9 @@
     "noFallthroughCasesInSwitch": false,
     "resolveJsonModule": true,
     "paths": {
-      "@src/*": [
-        "src/*"
-      ],
-      "@test/*": [
-        "test/*"
-      ]
+      "@src/*": ["src/*"],
+      "@test/*": ["test/*"]
     }
-  }
+  },
+  "include": ["src/**/*"]
 }

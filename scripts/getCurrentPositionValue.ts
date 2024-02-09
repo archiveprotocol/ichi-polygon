@@ -1,5 +1,5 @@
+import { blueprintKey, chainId } from '../src/constants';
 import IchiPolygonBlueprint from '../src/ichiPolygonBlueprint';
-import { blueprintKey, chainId } from './constants';
 import { AbstractLoggingContext, BlueprintContext, PositionContext, UserProtocolPositionSnapshot } from 'blueprint-lib';
 import { config } from 'dotenv';
 

@@ -1,4 +1,4 @@
-import { blueprintKey } from '../scripts/constants';
+import { blueprintKey } from './constants';
 import { IchiBlueprint } from './ichiBlueprint';
 
 export default class IchiPolygonBlueprint extends IchiBlueprint {
