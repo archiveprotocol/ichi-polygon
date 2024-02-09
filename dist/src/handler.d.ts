@@ -1,0 +1,41 @@
+import { DepositOrWithdrawResult, Vault } from './models';
+import BigNumber from 'bignumber.js';
+import { BlueprintContext, Classification, PositionValue, TokenInfo, TransactionDetails, UserTransactionResults } from 'blueprint-lib';
+import { ethers } from 'ethers';
+export declare class Handler {
+    private context;
+    private readonly blueprintKey;
+    private logger;
+    private contractReader;
+    private axiosManager;
+    private _vaults;
+    private subgraphUrl;
+    private subgraph;
+    private readonly rpcUrl;
+    constructor(context: BlueprintContext, subgraph_url: string, blueprintKey: string);
+    get vaults(): Map<string, Vault>;
+    private _subgraphResults;
+    get subgraphResults(): Map<string, DepositOrWithdrawResult>;
+    initSubgraph(): Promise<void>;
+    getUserTransactions(userAddresses: string[], fromBlock: number): Promise<UserTransactionResults>;
+    private fetchAndSetDepositsIntoMap;
+    private fetchAndSetWithdrawalsIntoMap;
+    classifyTx(txn: TransactionDetails): Promise<Classification[]>;
+    fetchWrapperAddressFromLogs(txReceipt: ethers.providers.TransactionReceipt): Promise<string>;
+    private fetchAndSetVaultsIntoMap;
+    getTokenInfosFromDepositOrWithdraw(depositOrWithdraw: DepositOrWithdrawResult): Promise<{
+        token0: TokenInfo;
+        token1: TokenInfo;
+        lpToken: TokenInfo;
+    }>;
+    fetchLPTokenPriceFromPool(vault: Vault, priceToken0: number, priceToken1: number, block: number): Promise<number>;
+    getTotalAmounts(lpTokenAddress: any, block: any): Promise<any>;
+    getTotalSupply(lpTokenAddress: any, block: any): Promise<any>;
+    fetchAmountsWithoutFeesFromIchi(lpTokenAddress: string, block: number): Promise<[BigNumber, BigNumber]>;
+    fetchUserSharesData(vaultId: string, userAddress: string, block: number): Promise<[BigNumber, BigNumber]>;
+    fetchUserSharesDataCommon(vaultId: string, userAddress: string, block: number, fetchData: (provider: ethers.providers.Provider) => Promise<[BigNumber, BigNumber]>): Promise<[BigNumber, BigNumber]>;
+    fetchDataFromWrapperContract(vaultId: string, userAddress: string, block: number, provider: ethers.providers.Provider): Promise<[BigNumber, BigNumber]>;
+    fetchDataFromPool(vaultId: string, userAddress: string, block: number, provider: ethers.providers.Provider): Promise<[BigNumber, BigNumber]>;
+    getPositionValue(positionIdentifier: string, userAddresses: string[], blockNumber?: number): Promise<PositionValue>;
+    getUserList(fromBlock: number): Promise<string[]>;
+}
