@@ -9,7 +9,7 @@
     "apy-vision-config": "https://github.com/archiveprotocol/apy-vision-config#v2.2.1",
     "archive-axios": "https://github.com/archiveprotocol/archive-axios#v1.0.35",
     "bignumber.js": "^9.1.1",
-    "blueprint-lib": "https://github.com/archiveprotocol/blueprint-lib#v1.1.5",
+    "blueprint-lib": "https://github.com/archiveprotocol/blueprint-lib#v1.1.7",
     "ethers": "5.7.2",
     "graphql": "^16.8.1",
     "graphql-request": "6.1.0",

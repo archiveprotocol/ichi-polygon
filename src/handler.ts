@@ -1,6 +1,5 @@
 import { vaultAbi, wrapperAbi } from './abi';
 import { rpcUrls } from './constants';
-import { EvmContractReader } from './evmContractReader';
 import { IchiGraphExplorer } from './ichiGraphExplorer';
 import { DepositOrWithdrawResult, Vault } from './models';
 import { ApAxiosManager } from 'archive-axios';
@@ -8,6 +7,7 @@ import BigNumber from 'bignumber.js';
 import {
   BlueprintContext,
   Classification,
+  EvmContractReader,
   Operation,
   OperationType,
   PositionShares,
