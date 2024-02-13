@@ -52,7 +52,7 @@ export class Handler {
         'Accept-Encoding': '*',
       },
       timeout: 1000 * 60, // one minute in milliseconds
-    })
+    });
   }
 
   public get vaults(): Map<string, Vault> {
@@ -102,7 +102,7 @@ export class Handler {
           deposit.operation = OperationType.DEPOSIT;
           deposit.sender = userAddress;
           const tx = await this.contractReader.fetchOrCachedTx(txHash);
-          deposit['blockNumber'] = tx.blockNumber;
+          deposit['blockNumber'] = tx.blockNumber || 0;
 
           this._subgraphResults.set(txHash, deposit);
         }

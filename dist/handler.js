@@ -63,7 +63,7 @@ class Handler {
                 deposit.operation = blueprint_lib_1.OperationType.DEPOSIT;
                 deposit.sender = userAddress;
                 const tx = await this.contractReader.fetchOrCachedTx(txHash);
-                deposit['blockNumber'] = tx.blockNumber;
+                deposit['blockNumber'] = tx.blockNumber || 0;
                 this._subgraphResults.set(txHash, deposit);
             }
         }));
