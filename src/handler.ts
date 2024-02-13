@@ -102,7 +102,7 @@ export class Handler {
           deposit.operation = OperationType.DEPOSIT;
           deposit.sender = userAddress;
           const tx = await this.contractReader.fetchOrCachedTx(txHash);
-          deposit['blockNumber'] = tx.blockNumber || 0;
+          deposit['blockNumber'] = tx?.blockNumber || 0;
 
           this._subgraphResults.set(txHash, deposit);
         }
@@ -120,7 +120,7 @@ export class Handler {
           withdraw.operation = OperationType.WITHDRAW;
           withdraw.sender = userAddress;
           const tx = await this.contractReader.fetchOrCachedTx(txHash);
-          withdraw['blockNumber'] = tx.blockNumber;
+          withdraw['blockNumber'] = tx?.blockNumber || 0;
 
           this._subgraphResults.set(txHash, withdraw);
         }

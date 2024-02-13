@@ -62,7 +62,7 @@ class Handler {
                 deposit.operation = blueprint_lib_1.OperationType.DEPOSIT;
                 deposit.sender = userAddress;
                 const tx = await this.contractReader.fetchOrCachedTx(txHash);
-                deposit['blockNumber'] = tx.blockNumber || 0;
+                deposit['blockNumber'] = (tx === null || tx === void 0 ? void 0 : tx.blockNumber) || 0;
                 this._subgraphResults.set(txHash, deposit);
             }
         }));
@@ -75,7 +75,7 @@ class Handler {
                 withdraw.operation = blueprint_lib_1.OperationType.WITHDRAW;
                 withdraw.sender = userAddress;
                 const tx = await this.contractReader.fetchOrCachedTx(txHash);
-                withdraw['blockNumber'] = tx.blockNumber;
+                withdraw['blockNumber'] = (tx === null || tx === void 0 ? void 0 : tx.blockNumber) || 0;
                 this._subgraphResults.set(txHash, withdraw);
             }
         }));
