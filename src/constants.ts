@@ -4,4 +4,4 @@ import { CHAINID } from 'apy-vision-config';
 export const rpcUrls = ['https://polygon-rpc.com', 'https://rpc.ankr.com/polygon'];
 
 export const chainId = CHAINID.MATIC;
-export const blueprintKey = 'ichi-polygon';
+export const blueprintKey = 'ichi_polygon_external';
