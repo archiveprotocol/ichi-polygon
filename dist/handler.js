@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Handler = void 0;
 const abi_1 = require("./abi");
 const constants_1 = require("./constants");
-const evmContractReader_1 = require("./evmContractReader");
 const ichiGraphExplorer_1 = require("./ichiGraphExplorer");
 const archive_axios_1 = require("archive-axios");
 const bignumber_js_1 = __importDefault(require("bignumber.js"));
@@ -23,7 +22,7 @@ class Handler {
         this.logger = this.context.getLogger();
         this._subgraphResults = new Map();
         this.axiosManager = new archive_axios_1.ApAxiosManager(blueprintKey, logging_library_1.KafkaManager.getInstance());
-        this.contractReader = new evmContractReader_1.EvmContractReader(this.context);
+        this.contractReader = new blueprint_lib_1.EvmContractReader(this.context);
         this.subgraphUrl = subgraph_url;
         this.axiosManager.setup({
             headers: {

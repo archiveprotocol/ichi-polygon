@@ -2540,18 +2540,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"blueprint-lib@https://github.com/archiveprotocol/blueprint-lib#v1.1.5":
-  version: 1.1.5
-  resolution: "blueprint-lib@https://github.com/archiveprotocol/blueprint-lib.git#commit=31fc3aac4eb95c31fc1114c12eb8e28acc8a15a2"
+"blueprint-lib@https://github.com/archiveprotocol/blueprint-lib#v1.1.7":
+  version: 1.1.7
+  resolution: "blueprint-lib@https://github.com/archiveprotocol/blueprint-lib.git#commit=95975dc6bac243cee14874848371901c8563e524"
   dependencies:
     apy-vision-config: "https://github.com/archiveprotocol/apy-vision-config#v2.2.1"
     archive-axios: "https://github.com/archiveprotocol/archive-axios#v1.0.35"
     axios: ^1.6.2
     bignumber.js: ^9.1.1
+    ethers: 5.7.2
     log4js: ^6.7.1
     logging-library: "https://github.com/archiveprotocol/logging-library#v1.0.27"
     logging-queue-interfaces: "https://github.com/archiveprotocol/logging-queue-interfaces#v1.0.17"
-  checksum: 1ffc0f2a24e77eb3cfe34b20b4896dbae9fcd4990efabdd70116b6bc9fbe60dc3768822c526937a3d8b06e7dc20fa6e50f60de43ac0d3ef935c4b785234f15e8
+    web3-wrapper-library: "https://github.com/archiveprotocol/web3-wrapper-library#v3.2.5"
+  checksum: c27df11293b29878e70ddf2d4aff11c963bb447ab4613fcf45f305e128d0833b965766ee8227f74c1b346f94de0e06e42d92aedb14996ce92733205dd1a8d4e6
   languageName: node
   linkType: hard
 
@@ -4310,7 +4312,7 @@ __metadata:
     apy-vision-config: "https://github.com/archiveprotocol/apy-vision-config#v2.2.1"
     archive-axios: "https://github.com/archiveprotocol/archive-axios#v1.0.35"
     bignumber.js: ^9.1.1
-    blueprint-lib: "https://github.com/archiveprotocol/blueprint-lib#v1.1.5"
+    blueprint-lib: "https://github.com/archiveprotocol/blueprint-lib#v1.1.7"
     eslint: 8.49.0
     eslint-config-prettier: 9.0.0
     eslint-plugin-import: 2.28.1
